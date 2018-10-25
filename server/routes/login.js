@@ -60,7 +60,7 @@ async function verify(token) {
     const payload = ticket.getPayload();
     const userid = payload['sub'];
     console.log(payload.name);
-    console.log(payload.picture)
+    console.log(payload.picture);
     return {
         nombre: payload.name,
         email: payload.email,

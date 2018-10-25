@@ -9,12 +9,6 @@ const app = express();
 
 app.get('/usuario', verificarToken ,(req, res) => {
 
-    return res.json({
-        usuario: req.usuario,
-        nombre: req.nombre,
-        email: req.email
-    });
-
     let desde = req.query.desde || 0;
     let limite = req.query.limite || 5;
 
@@ -98,7 +92,7 @@ app.get('/usuario', verificarToken ,(req, res) => {
                 ok: false,
                 err
             });
-        };
+        }
         if (!usuarioBorrado){
             return res.status(400).json({
                 ok: false,
