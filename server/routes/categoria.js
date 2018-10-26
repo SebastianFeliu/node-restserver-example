@@ -10,7 +10,7 @@ const app = express();
 // Mostrar categorias
 app.get('/categoria',verificarToken, (req, res) => {
 
-Categoria.find({estado:true})
+    Categoria.find({estado:true})
          .sort('nombre')
          .populate('usuario','nombre email')
          .exec((err, categorias) => {
